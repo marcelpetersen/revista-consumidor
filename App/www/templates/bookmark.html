@@ -1,0 +1,18 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-stable">
+    		<h1 class="title">Agregar a mis intereses
+			</h1>
+        <button class="button button-icon icon ion-android-close dark" ng-click="hideModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="item" ng-repeat="category in modal.categories" ng-click="saveToCategory(modal.ref,'{{category.$id}}')">
+                {{category.$id}}
+            </div>
+			<div class="item item-icon-left" ng-click="createCustomCategory()">
+                <i class="icon ion-plus-round" style="font-size:22px"></i>
+				Agregar nuevo tema de interés
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

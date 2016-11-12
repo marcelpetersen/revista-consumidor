@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'Soberana';
+	src: url('../lib/fonts/SoberanaSans-Regular.woff') format('woff');
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	font-family: 'Soberana', "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+
+.toolbar-main {
+	box-shadow: 0px 1px 15px rgba(136, 136, 136, 0.33);
+	-webkit-box-shadow: 0px 1px 15px rgba(136, 136, 136, 0.33);
+}
+
+md-sidenav .bg {
+    background: #424242;
+}
+
+.admin-photo {
+    border-radius:50%;
+    height:50px;
+    width:50px;
+    background: #ccc;
+    margin: 30px 20px 0 15px;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: row;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.admin-text h3 {
+    margin: 30px 0 5px;
+}
+
+.admin-text p {
+    margin-top: 0;
+}
+
+md-sidenav md-list-item {
+    height:40px;
+    color:#ccc;
+}
+
+md-list-item.activeTab .md-button {
+    background: #F44336;
+    color: #fff;
+}
+
+md-list-item.activeTab .md-list-item-inner {
+    z-index: 1;
+}
+
+input.md-datepicker-input {
+    width: 200px;
+}

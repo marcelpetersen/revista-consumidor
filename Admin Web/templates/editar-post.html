@@ -1,0 +1,56 @@
+<div layout-padding>
+<md-card layout-padding>
+    <div layout="row">
+    <h2 flex="80">{{title}}</h2>
+    <div flex="20">
+        <md-button class="md-raised" style="margin-top:18px">Agregar foto</md-button>
+    </div>
+    </div>
+    <form name="userForm">
+
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>Título</label>
+            <input ng-model="article.title">
+          </md-input-container>
+
+          <md-input-container>
+            <label>Fecha</label>
+            <md-datepicker ng-model="date"></md-datepicker>
+          </md-input-container>
+        </div>
+        
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Autor</label>
+            <input ng-model="article.author">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Título del autor</label>
+            <input ng-model="article['author-role']">
+          </md-input-container>
+          <md-input-container>
+          <label>Categoría(s)</label>
+          <md-select ng-model="article.cat">
+            <md-option ng-repeat="category in categories2" ng-value="category.$id" ng-if="category.$id!='protected'">
+              {{category.$id}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+        </div>
+
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Descripción</label>
+            <input ng-model="article.description">
+          </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Texto de la publicación</label>
+          <textarea ng-model="article.text" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+        <md-button class="md-raised md-warn" ng-click="guardar()">Guardar</md-button>
+      </form>
+</md-card>
+</div>

@@ -1,0 +1,40 @@
+<ion-view>
+	<ion-content>
+		<div class="padding article-title">
+			<h1>{{article.title}}</h1>
+			<h5>Por {{article.author}}, {{article["author-role"]}}</h5>
+			<p>{{article.date}}</p>
+			<div class="padding" style="font-size:22px;color:grey">
+				<i class="icon ion-social-whatsapp" style="padding-right:10px"></i>
+				<i class="icon ion-social-facebook" style="padding-right:10px"></i>
+				<i class="icon ion-social-twitter" style="padding-right:10px"></i>
+			</div>
+		</div>
+		<img ng-src="{{article.image}}" class="full-image">
+		<p class="padding article-p">{{article.text}}</p>
+		<div>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Comentarios</span>
+				<input type="text" placeholder="¡Danos tu opinión!">
+			</label>
+			<button class="button button-outline button-assertive" style="margin:20px;">Enviar</button>
+		</div>
+		<div>
+			<h3 class="padding-left padding-right padding-bottom">
+				Artículos relacionados
+			</h3>
+			<div class="list">
+				<a class="item item-thumbnail-left" href="#">
+					<img src="img/vocho.jpg">
+					<h2>Qué saber a la hora de comprar un coche</h2>
+					<p>Donec feugiat, urna non blandit ultricies, ipsum tellus accumsan nisl</p>
+				</a>
+				<a class="item item-thumbnail-left" href="#">
+					<img src="img/trip.jpg">
+					<h2>¿Las mejores vacaciones?</h2>
+					<p>Donec feugiat, urna non blandit ultricies, ipsum tellus accumsan nisl</p>
+				</a>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+<div layout-padding>
+<div>
+        <md-button class="md-raised md-background" ng-click="goCategory(null)">Nueva categoría</md-button>
+</div>
+<md-card>
+    <md-list>
+        <md-list-item>
+            <h3>Categorías</h3>
+        </md-list-item>
+        <md-list-item ng-repeat="category in categories2" ng-if="category.$id!='protected'">
+            <img ng-src="{{category.image}}" class="md-avatar">
+            <div class="md-list-item-text" layout="column">
+            <h4>{{category.$id}}</h4>
+            </div>
+            <md-button class="md-secondary md-raised m-primary" ng-click="goCategory(category.$id)">Editar</md-button>
+            <md-button class="md-secondary md-raised md-warn" ng-click="removeCat(category)">Borrar</md-button>
+        </md-list-item>
+    </md-list>
+</md-card>
+</div>

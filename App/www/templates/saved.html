@@ -1,0 +1,41 @@
+<ion-view>
+	<ion-content>
+		<div ng-if="!noArticles">
+			<h4 class="padding" style="margin-top:20px;">
+					Mis artículos guardados
+			</h4>
+			<div class="list" style="margin-bottom:0">
+				<div class="item item-thumbnail-left" ng-repeat="article in articles" ng-click="showArticle('{{article.$id}}')">
+					<img ng-src="{{article.image}}">
+					<h2>{{article.title}}</h2>
+					<p>{{article.description}}</p>
+				</div>
+
+			</div>
+			<h4 class="padding" style="margin-top:20px;">
+					¡Descubre más contenido!
+			</h4>
+
+		</div>
+
+		<div ng-if="noArticles">
+
+				<h4 class="padding" style="margin-top:20px;">
+					No tienes artículos guardados en esta lista.
+				</h4>
+				<p class="padding-left padding-right">¡Descubre más contenido y crea una lista de artículos relevantes para ti!</p>
+
+		</div>
+
+
+<div class="row img-row" style="margin-top:20px;">
+			<div class="col cat-pic card" ng-repeat="category in fixedCategories2" ng-click="openCategory('{{category.$id}}')">
+				<img ng-src="{{category.image}}">
+				<div style="color:#fff; text-align:center;">
+					<h2 style="color:#fff;font-size:25px;padding: 10px 10px 5px 10px;">{{category.$id}}</h2>
+				</div>
+			</div>
+
+</div>
+	</ion-content>
+</ion-view>

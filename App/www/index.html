@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<title></title>
+
+	<link rel="manifest" href="manifest.json">
+
+	<!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+	<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+	<!-- ionic/angularjs js -->
+	<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+	<script src="lib/firebase/firebase.min.js"></script>
+	<script src="lib/firebase/angularfire.min.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDY2rhyKtVuU792Q1Kq_eCWV1oNlVZ5Tww",
+			authDomain: "revista-consumidor.firebaseapp.com",
+			databaseURL: "https://revista-consumidor.firebaseio.com",
+			storageBucket: "revista-consumidor.appspot.com",
+			messagingSenderId: "545945099031"
+		};
+		firebase.initializeApp(config);
+	</script>
+
+	<!-- cordova script (this will be a 404 during development) -->
+	<script src="cordova.js"></script>
+
+	<!-- your app's js -->
+	<script src="js/app.js"></script>
+	<script src="js/routes.js"></script>
+	<script src="js/controllers.js"></script>
+</head>
+
+<body ng-app="revista-consumidor">
+	<ion-pane ng-controller="AppCtrl">
+		<ion-side-menus>
+			<!-- Left menu -->
+			<ion-side-menu side="left">
+				<ion-content>
+				<div class="list">
+					<a class="item item-icon-left" ng-click="home()" ng-if="!main">
+						<i class="icon ion-home" style="font-size:22px"></i>
+						Inicio
+					</a>
+					<a class="item item-icon-left" ng-click="explore()">
+						<i class="icon ion-compass" style="font-size:22px"></i>
+						Explorar
+					</a>
+					<div class="item item-divider">
+						Mis intereses
+					</div>
+					<a ng-repeat="category in categories" class="item" ng-click="openCustomCategory('{{category.$id}}')">
+						{{category.$id}}
+					</a>
+					<a class="item item-icon-left" ng-click="createCustomCategory()">
+						<i class="icon ion-plus-round" style="font-size:22px"></i>
+						Agregar tema
+					</a>
+					<div class="item item-divider">
+						Mi cuenta
+					</div>
+					<a class="item item-icon-left" ng-if="!anonymous" ng-click="goprofile()">
+						<i class="icon ion-person" style="font-size:22px"></i>
+						Perfil
+					</a>
+					<a class="item item-icon-left" ng-if="!anonymous" ng-click="logout()">
+						<i class="icon ion-power" style="font-size:22px"></i>
+						Salir
+					</a>
+					<a class="item item-icon-left" ng-if="anonymous" ng-click="firelogin()">
+						<i class="icon ion-log-in" style="font-size:22px"></i>
+						Entrar
+					</a>
+				</div>
+				</ion-content>
+			</ion-side-menu>
+			<ion-side-menu-content>
+				<ion-header-bar class="bar-light">
+					<button ng-if="!article" class="button button-icon icon ion-navicon" ng-click="toggleMenu()"></button>
+					<button ng-if="article" class="button button-icon icon ion-android-arrow-back" ng-click="back()"></button>
+					<img ng-if="main" class="title-image" src="img/logo.png">
+					<h1 ng-if="!main" class="title">{{title}}</h1>
+					<button ng-if="main" class="button button-icon icon ion-android-search"></button>
+					<button ng-if="article" class="button button-icon icon ion-android-bookmark" ng-click="showModal('{{articleRef}}')"></button>
+				</ion-header-bar>
+				<ion-nav-view animation="none"></ion-nav-view>
+			</ion-side-menu-content>
+		</ion-side-menus>
+	</ion-pane>
+</body>
+
+</html>

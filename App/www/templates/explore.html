@@ -1,0 +1,12 @@
+<ion-view>
+	<ion-content>
+		<div class="row img-row" style="margin-top:20px;">
+			<div class="col cat-pic card" ng-repeat="category in fixedCategories2" ng-click="openCategory('{{category.$id}}')">
+				<img ng-src="{{category.image}}">
+				<div style="color:#fff; text-align:center;">
+					<h2 style="color:#fff;font-size:25px;padding: 10px 10px 5px 10px;">{{category.$id}}</h2>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

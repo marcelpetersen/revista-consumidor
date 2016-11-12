@@ -1,0 +1,74 @@
+<html lang="es" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-app="revista-consumidor-admin" ng-cloak layout="row" flex ng-controller="AdminCtrl">
+  
+       <md-sidenav
+        class="md-sidenav-left bg"
+        md-component-id="left"
+        md-is-locked-open="true"
+        md-whiteframe="4"
+        md-theme="side"
+        style=" background: #424242;">
+
+        <div class="bg admin-info">
+             <div class="admin-photo"></div>
+             <div class="admin-text">
+                <h3>Usuario Admin</h3>
+                <p>usuario@prueba.com</p>
+             </div>
+         </div>
+     <md-content style=" background: #424242;">
+         <md-list flex >
+             <md-list-item ng-class="{'activeTab': activeTab.one}" ng-click="goPublicar()">
+                 <h4>Publicaciones</h4>
+             </md-list-item>
+             <md-list-item ng-class="{'activeTab': activeTab.two}" ng-click="goAdministrar()">
+                 <h4>Categorías</h4>
+             </md-list-item>
+             <md-list-item ng-class="{'activeTab': activeTab.three}" ng-click="goAnalizar()">
+                 <h4>Análisis</h4>
+             </md-list-item>
+         </md-list>
+     </md-content>
+
+    </md-sidenav>
+
+    <md-content flex>
+
+      <md-toolbar style="background:#fff" class="toolbar-main">
+        <div class="md-toolbar-tools">revista</div>
+      </md-toolbar>
+      <ui-view></ui-view>
+    </md-content>
+  
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+  
+  <script src="lib/firebase/firebase.min.js"></script>
+  <script src="lib/firebase/angularfire.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDY2rhyKtVuU792Q1Kq_eCWV1oNlVZ5Tww",
+    authDomain: "revista-consumidor.firebaseapp.com",
+    databaseURL: "https://revista-consumidor.firebaseio.com",
+    storageBucket: "revista-consumidor.appspot.com",
+    messagingSenderId: "545945099031"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/scripts.js"></script>
+</body>
+</html>

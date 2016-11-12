@@ -1,0 +1,23 @@
+<ion-view>
+	<ion-content style="background:#F0F0F0; ">
+		<div style="padding:5% 2%">
+
+			<div class="list list-inset" style="margin-top:0">
+				<label class="item item-input">
+				<input type="text" placeholder="Nombre" ng-model="user.name">
+			</label>
+			<label class="item item-input">
+				<input type="email" placeholder="Correo electrónico" ng-model="user.email">
+			</label>
+			<label class="item item-input">
+				<input type="password" placeholder="Contraseña" ng-model="user.password">
+			</label>
+			</div>
+			<div style="margin:0 10px">
+			<button class="button button-block button-assertive" ng-click="signUp(user)">Registrarse</button>
+
+			</div>
+
+		</div>
+	</ion-content>
+</ion-view>

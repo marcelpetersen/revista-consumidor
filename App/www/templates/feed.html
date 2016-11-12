@@ -1,0 +1,23 @@
+<ion-view>
+	<ion-content>
+
+
+		<div class="list card" ng-repeat="article in articles">
+			<div class="item item-image">
+				<img ng-src="{{article.image}}">
+			</div>
+			<a class="item item-text-wrap" ng-click="showArticle('{{article.$id}}')">
+				<h1>{{article.title}}</h1>
+				<p>{{article.description}}</p>
+			</a>
+			<div class="item item-button-right">
+				<h5>{{article.author}}</h5>
+				<p style="font-size:12px;">{{article["author-role"]}}</p>
+				<div class="buttons padding-top">
+					<button class="button button-icon icon ion-heart" ng-click="showModal('{{article.$id}}')"></button>
+					<button class="button button-icon icon ion-android-share"></button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
